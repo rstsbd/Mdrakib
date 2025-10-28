@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <title>যোগাযোগ</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">হোম</a>
+    <a href="portfolio.html">পোর্টফোলিও</a>
+    <a href="campaign.html">অভিযান</a>
+    <a href="contact.html">যোগাযোগ</a>
+    <a href="admin-login.html">অ্যাডমিন</a>
+  </nav>
 
+  <div class="container">
+    <h1>আপনার সমস্যা জানান</h1>
+    <form id="contactForm">
+      <label>নাম *</label>
+      <input type="text" id="name" required />
+
+      <label>ইমেইল</label>
+      <input type="email" id="email" />
+
+      <label>ফোন</label>
+      <input type="text" id="phone" />
+
+      <label>বিভাগ *</label>
+      <select id="category" required>
+        <option value="সাধারণ">সাধারণ</option>
+        <option value="প্রান্তিক">প্রান্তিক/দরিদ্র</option>
+        <option value="অন্যান্য">অন্যান্য</option>
+      </select>
+
+      <label>বার্তা *</label>
+      <textarea id="message" rows="5" required></textarea>
+
+      <button type="submit">জমা দিন</button>
+    </form>
+    <p id="status"></p>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="assets/js/contact-form.js"></script>
+</body>
+</html>
