@@ -2,39 +2,53 @@
 <html lang="bn" dir="rtl">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>অ্যাডমিন ড্যাশবোর্ড</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>body { font-family: 'Noto Sans Bengali', sans-serif; }</style>
 </head>
-<body>
-  <nav>
-    <button onclick="logout()">লগআউট</button>
+<body class="bg-gray-100 min-h-screen">
+  <nav class="bg-red-700 text-white p-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">অ্যাডমিন প্যানেল</h1>
+      <button onclick="logout()" class="bg-red-600 hover:bg-red-800 px-4 py-2 rounded">লগআউট</button>
+    </div>
   </nav>
 
-  <div class="container">
-    <h1>অ্যাডমিন প্যানেল</h1>
+  <div class="container mx-auto p-6 max-w-6xl space-y-8">
 
-    <!-- স্লাইড ম্যানেজ -->
-    <h2>স্লাইডশো ম্যানেজ</h2>
-    <form id="slideForm">
-      <input type="url" placeholder="ছবির URL" id="slideImage" required />
-      <input type="text" placeholder="ক্যাপশন" id="slideCaption" required />
-      <button type="submit">যোগ করুন</button>
-    </form>
-    <div id="slidesList"></div>
+    <!-- স্লাইড -->
+    <div class="bg-white p-6 rounded-xl shadow-lg">
+      <h2 class="text-2xl font-bold text-green-700 mb-4">স্লাইডশো ম্যানেজ</h2>
+      <form id="slideForm" class="grid md:grid-cols-3 gap-4 mb-6">
+        <input type="url" id="slideImage" placeholder="ছবির URL" class="border p-3 rounded-lg" required>
+        <input type="text" id="slideCaption" placeholder="ক্যাপশন" class="border p-3 rounded-lg" required>
+        <button type="submit" class="bg-green-600 text-white p-3 rounded-lg hover:bg-green-700">যোগ করুন</button>
+      </form>
+      <div id="slidesList" class="grid md:grid-cols-3 gap-4"></div>
+    </div>
 
-    <!-- নিউজ ম্যানেজ -->
-    <h2>নিউজ ফিড</h2>
-    <form id="newsForm">
-      <input type="text" placeholder="নিউজ টেক্সট" id="newsText" required />
-      <button type="submit">যোগ করুন</button>
-    </form>
-    <div id="newsList"></div>
+    <!-- নিউজ -->
+    <div class="bg-white p-6 rounded-xl shadow-lg">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">নিউজ ফিড</h2>
+      <form id="newsForm" class="flex gap-4 mb-6">
+        <input type="text" id="newsText" placeholder="নিউজ টেক্সট" class="flex-1 border p-3 rounded-lg" required>
+        <button type="submit" class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700">যোগ করুন</button>
+      </form>
+      <div id="newsList" class="space-y-2"></div>
+    </div>
 
     <!-- কন্টাক্ট -->
-    <h2>যোগাযোগ</h2>
-    <div id="contactsList"></div>
+    <div class="bg-white p-6 rounded-xl shadow-lg">
+      <h2 class="text-2xl font-bold text-purple-700 mb-4">যোগাযোগের তথ্য</h2>
+      <div id="contactsList" class="space-y-3"></div>
+    </div>
   </div>
 
+  <script src="config.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
   <script src="config.js"></script>
   <script src="assets/js/admin.js"></script>
 </body>
