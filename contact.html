@@ -1,40 +1,49 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="bn" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>যোগাযোগ</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>যোগাযোগ - আব্দুর রববীক</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kalpurush&family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
+  <style>body { font-family: 'Noto Sans Bengali', sans-serif; }</style>
 </head>
-<body>
-  <nav>
-    <a href="index.html">হোম</a>
-    <a href="portfolio.html">পোর্টফোলিও</a>
-    <a href="campaign.html">অভিযান</a>
-    <a href="contact.html">যোগাযোগ</a>
-    <a href="admin-login.html">অ্যাডমিন</a>
+<body class="bg-gradient-to-br from-green-50 to-blue-50 min-h-screen">
+  <nav class="bg-gradient-to-r from-red-800 to-red-600 text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-center gap-6 flex-wrap">
+      <a href="index.html" class="hover:text-yellow-300">হোম</a>
+      <a href="portfolio.html" class="hover:text-yellow-300">পোর্টফোলিও</a>
+      <a href="campaign.html" class="hover:text-yellow-300">অভিযান</a>
+      <a href="contact.html" class="hover:text-yellow-300 font-bold">যোগাযোগ</a>
+      <a href="admin-login.html" class="hover:text-yellow-300">অ্যাডমিন</a>
+    </div>
   </nav>
 
-  <div class="container">
-    <h1>আপনার সমস্যা জানান</h1>
-    <form id="contactForm">
-      <label>নাম *</label>
-      <input type="text" id="name" required />
+  <div class="container mx-auto px-4 py-8 max-w-2xl">
+    <div class="bg-white rounded-xl shadow-xl p-8">
+      <h1 class="text-3xl font-bold text-green-700 mb-6 text-center">আপনার সমস্যা জানান</h1>
+      <form id="contactForm" class="space-y-6">
+        <input type="text" id="name" placeholder="নাম *" class="w-full p-4 border rounded-lg focus:ring-2 focus:ring-green-500" required>
+        <input type="email" id="email" placeholder="ইমেইল" class="w-full p-4 border rounded-lg">
+        <input type="text" id="phone" placeholder="ফোন" class="w-full p-4 border rounded-lg">
+        <select id="category" class="w-full p-4 border rounded-lg" required>
+          <option value="সাধারণ">সাধারণ</option>
+          <option value="প্রান্তিক">প্রান্তিক/দরিদ্র</option>
+          <option value="অন্যান্য">অন্যান্য</option>
+        </select>
+        <textarea id="message" rows="5" placeholder="বার্তা *" class="w-full p-4 border rounded-lg focus:ring-2 focus:ring-green-500" required></textarea>
+        <button type="submit" class="w-full bg-gradient-to-r from-green-600 to-green-500 text-white p-4 rounded-lg font-bold text-lg shadow-lg hover:from-green-700 hover:to-green-600 transform hover:scale-105 transition">
+          জমা দিন
+        </button>
+      </form>
+      <p id="status" class="mt-4 text-center font-bold"></p>
+    </div>
+  </div>
 
-      <label>ইমেইল</label>
-      <input type="email" id="email" />
-
-      <label>ফোন</label>
-      <input type="text" id="phone" />
-
-      <label>বিভাগ *</label>
-      <select id="category" required>
-        <option value="সাধারণ">সাধারণ</option>
-        <option value="প্রান্তিক">প্রান্তিক/দরিদ্র</option>
-        <option value="অন্যান্য">অন্যান্য</option>
-      </select>
-
-      <label>বার্তা *</label>
-      <textarea id="message" rows="5" required></textarea>
+  <script src="config.js"></script>
+  <script src="assets/js/contact-form.js"></script>
+</body>
+</html>      <textarea id="message" rows="5" required></textarea>
 
       <button type="submit">জমা দিন</button>
     </form>
