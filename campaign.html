@@ -1,40 +1,55 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="bn" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>অভিযান - আব্দুর রববীক</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kalpurush&family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
+  <style>body { font-family: 'Noto Sans Bengali', sans-serif; }</style>
 </head>
-<body>
-  <nav>
-    <a href="index.html">হোম</a>
-    <a href="portfolio.html">পোর্টফোলিও</a>
-    <a href="campaign.html">অভিযান</a>
-    <a href="contact.html">যোগাযোগ</a>
-    <a href="admin-login.html">অ্যাডমিন</a>
+<body class="bg-gradient-to-br from-green-50 to-blue-50 min-h-screen">
+  <nav class="bg-gradient-to-r from-red-800 to-red-600 text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-center gap-6 flex-wrap">
+      <a href="index.html" class="hover:text-yellow-300">হোম</a>
+      <a href="portfolio.html" class="hover:text-yellow-300">পোর্টফোলিও</a>
+      <a href="campaign.html" class="hover:text-yellow-300 font-bold">অভিযান</a>
+      <a href="contact.html" class="hover:text-yellow-300">যোগাযোগ</a>
+      <a href="admin-login.html" class="hover:text-yellow-300">অ্যাডমিন</a>
+    </div>
   </nav>
 
-  <div class="container">
-    <h1>অভিযান: ডিজিটাল বিচার দিন</h1>
-    
-    <div class="campaign-section">
-      <h2>উন্নয়ন, শান্তি ও সমৃদ্ধির বাংলাদেশ</h2>
-      <p>বাংলাদেশ গড়তে সকলের কণ্ঠস্বর শুনতে চাই। ন্যায়বিচার, স্বচ্ছতা ও ডিজিটাল সেবার মাধ্যমে প্রতিটি মানুষের অধিকার নিশ্চিত করাই আমার লক্ষ্য।</p>
+  <div class="container mx-auto px-4 py-8 max-w-4xl">
+    <div class="bg-white rounded-xl shadow-xl p-8">
+      <h1 class="text-4xl font-bold text-green-700 mb-8 text-center">অভিযান: ডিজিটাল বিচার দিন</h1>
+      <div class="space-y-8">
+        <div class="bg-blue-50 p-6 rounded-lg shadow">
+          <h2 class="text-2xl font-bold text-blue-700 mb-3">উন্নয়ন, শান্তি ও সমৃদ্ধির বাংলাদেশ</h2>
+          <p>সকলের কণ্ঠস্বর শুনে ন্যায়বিচার, স্বচ্ছতা ও ডিজিটাল সেবার মাধ্যমে প্রতিটি মানুষের অধিকার নিশ্চিত করা।</p>
+        </div>
+        <div class="bg-green-50 p-6 rounded-lg shadow">
+          <h2 class="text-2xl font-bold text-green-700 mb-3">ইসলামী পার্শ্ব চাক</h2>
+          <p>ইসলামী মূল্যবোধের ভিত্তিতে শিক্ষা, স্বাস্থ্য, অর্থনীতি ও সমাজ কল্যাণে কাজ।</p>
+        </div>
+        <div class="bg-yellow-50 p-6 rounded-lg shadow">
+          <h2 class="text-2xl font-bold text-yellow-700 mb-3">আমাদের প্রতিশ্রুতি</h2>
+          <ul class="list-disc list-inside space-y-2">
+            <li>দ্রুত সমস্যা সমাধান</li>
+            <li>ডিজিটাল স্বচ্ছতা</li>
+            <li>প্রান্তিক জনগোষ্ঠীর কণ্ঠস্বর</li>
+            <li>ন্যায়বিচার ও শান্তি</li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a href="contact.html" class="inline-block bg-gradient-to-r from-green-600 to-green-500 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:from-green-700 hover:to-green-600 transform hover:scale-105 transition">
+          আমাদের সাথে যোগ দিন
+        </a>
+      </div>
     </div>
-
-    <div class="campaign-section">
-      <h2>প্রথম ধাপ: ইসলামী পার্শ্ব চাক</h2>
-      <p>ইসলামী মূল্যবোধের ভিত্তিতে সমাজ গঠন, শিক্ষা, স্বাস্থ্য ও অর্থনৈতিক উন্নয়নে কাজ করা হবে। প্রতিটি প্রান্তিক মানুষের কাছে সেবা পৌঁছে দেওয়া হবে।</p>
-    </div>
-
-    <div class="campaign-section">
-      <h2>আমাদের প্রতিশ্রুতি</h2>
-      <ul>
-        <li>প্রতিটি সমস্যার দ্রুত সমাধান</li>
-        <li>ডিজিটাল সিস্টেমে স্বচ্ছতা</li>
-        <li>প্রান্তিক জনগোষ্ঠীর কণ্ঠস্বর শোনা</li>
-        <li>ন্যায়বিচার ও শান্তি প্রতিষ্ঠা</li>
+  </div>
+</body>
+</html>        <li>ন্যায়বিচার ও শান্তি প্রতিষ্ঠা</li>
       </ul>
     </div>
 
