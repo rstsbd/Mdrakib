@@ -1,40 +1,44 @@
-// admin.js
-if (window.location.pathname.includes('admin-login.html')) {
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
+if (!localStorage.getItem('adminLoggedIn')) window.location.href = 'admin-login.html';
 
-        if (username === CONFIG.ADMIN.username && password === CONFIG.ADMIN.password) {
-            localStorage.setItem('adminLoggedIn', 'true');
-            window.location.href = 'admin-dashboard.html';
-        } else {
-            document.getElementById('loginStatus').innerHTML = '<span style="color:red">ভুল তথ্য!</span>';
-        }
+// স্লাইড
+document.getElementById('slideForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = {
+        image: document.getElementById('slideImage').value,
+        caption: document.getElementById('slideCaption').value
+    };
+    await fetch(CONFIG.GOOGLE_SCRIPT_URL + '?type=slide', {
+        method: 'POST',
+        body: JSON.stringify(data)
     });
+    loadSlidesAdmin();
+});
+
+// নিউজ
+document.getElementById('newsForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = { text: document.getElementById('newsText').value };
+    await fetch(CONFIG.GOOGLE_SCRIPT_URL + '?type=news', {
+        method: 'POST',
+        body: JSON.stringify(data)
+    });
+    loadNewsAdmin();
+});
+
+async function loadSlidesAdmin() {
+    const res = await fetch(CONFIG.SLIDES_SHEETDB);
+    const data = await res.json();
+    const list = document.getElementById('slidesList');
+    list.innerHTML = data.map(s => `
+        <div class="admin-item">
+            <img src="${s.image}" width="100">
+            <p>${s.caption}</p>
+            <button onclick="deleteItem('slides', '${s.id}')">মুছুন</button>
+        </div>
+    `).join('');
 }
 
-if (window.location.pathname.includes('admin-dashboard.html')) {
-    if (localStorage.getItem('adminLoggedIn') !== 'true') {
-        window.location.href = 'admin-login.html';
-    }
-
-    async function loadData() {
-        const search = document.getElementById('search').value.toLowerCase();
-        const category = document.getElementById('filterCategory').value;
-        const status = document.getElementById('filterStatus').value;
-
-        try {
-            const res = await fetch(CONFIG.SHEETDB_API);
-            const data = await res.json();
-
-            let filtered = data.filter(row => {
-                const matchesSearch = row.name?.toLowerCase().includes(search) || row.message?.toLowerCase().includes(search);
-                const matchesCategory = !category || row.category === category;
-                const matchesStatus = !status || row.status === status;
-                return matchesSearch && matchesCategory && matchesStatus;
-            });
-
+// অন্যান্য ফাংশন (নিউজ, কন্টাক্ট, ডিলিট) একইভাবে
             const tbody = document.querySelector('#dataTable tbody');
             tbody.innerHTML = '';
 
