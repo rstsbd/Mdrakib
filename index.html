@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="bn" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -16,8 +16,16 @@
   </nav>
 
   <div class="container">
+    <!-- স্লাইডশো -->
+    <div class="slideshow-container" id="slideshow"></div>
+
+    <!-- রানিং নিউজ ফিড -->
+    <div class="news-ticker">
+      <strong>সর্বশেষ খবর:</strong> <span id="ticker-text"></span>
+    </div>
+
     <h1>স্বাগতম!</h1>
-    <p><strong>খন্দকার মোহাম্মদ আব্দুর রাকিব</strong> - ৮ নং মণ্ডল</p>
+    <p><strong>হাজ্জাকার আব্দুর রববীক</strong> - ৮ নং মণ্ডল</p>
     <h2>ডিজিটাল বিচার দিন</h2>
     <img src="assets/img/poster.jpg" alt="পোস্টার" class="poster" />
     <br><br>
@@ -25,5 +33,7 @@
   </div>
 
   <script src="config.js"></script>
+  <script src="assets/js/slideshow.js"></script>
+  <script src="assets/js/news-ticker.js"></script>
 </body>
 </html>
